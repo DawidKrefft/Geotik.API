@@ -1,9 +1,11 @@
+# Application Version: Ballerina 2201.8.2 (Swan Lake Update 8)
+
 # Running the Application
 
 To start the application, navigate to the project's root directory and run the following command:
 
-bash: bal run
-powershell: bal-run
+```bash
+bal run
 
 # API TASK
 

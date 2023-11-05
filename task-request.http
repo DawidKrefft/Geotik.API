@@ -1,0 +1,54 @@
+### Get users
+GET http://localhost:9090/task/users/
+
+### Get a specific user: 200 OK
+GET http://localhost:9090/task/users/1
+
+### Get a specific user: 404 Not Found
+GET http://localhost:9090/task/users/0
+
+### Creat a user
+POST http://localhost:9090/task/users
+content-type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "Test1234"
+}
+
+### Reset password: Accepted
+POST http://localhost:9090/task/users/resetPassword
+content-type: application/json
+
+{
+  "email": "user1@example.com"
+}
+
+### Reset password: Bad Request
+POST http://localhost:9090/task/users/resetPassword
+content-type: application/json
+
+{
+  "email": "fake@example.com"
+}
+
+### Login: 200 OK
+POST http://localhost:9090/task/auth/login
+content-type: application/json
+
+{
+  "email": "user1@example.com",
+  "password": "Password1"
+}
+
+### Login: 401 Unauthorized
+POST http://localhost:9090/task/auth/login
+content-type: application/json
+
+{
+  "email": "fake@example.com",
+  "password": "FakePassword1"
+}
+
+
+
